@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VK9 Security: DC506 demo</title>
+    <!--Just background & font editing -->
+    <style>
+        body {background-color: #233041}
+        p    {color: #FFDBB8;}
+    </style>
+</head>
+<body>
+<!-- This adds the image logo -->
+<img src="vk9logo.png" height="200" width="250">
+<!-- Displays the text above the search box -->
+<h1 style="color:#d64923">Inyección de comandos</h1>
+<p>Digite alguno de los siguientes comandos para verificar el estado del sistema</p>
+<p>mem</p>
+<p>cpu</p>
+<!-- Search box -->
+<form action="inyeccion-de-comandos.php" method="get">
+    <input id="search" name="input" type="text" placeholder="">
+    <input id="submit" type="submit" value="Search">
+</form>
+<!-- Caja -->
+<h1 style="color:#d64923">LFI log viewer</h1>
+<p>Seleccione un log para ver su contenido</p>
+<form method="get" action="lfi-viewer.php">
+    <select name="log" multiple>
+        <option value="error.log">Apache error</option>
+        <option value="access.log">Apache access</option>
+    </select>
+    <input type="submit" name="submit" value=Submit>
+</form>
+</body>
+</html>
